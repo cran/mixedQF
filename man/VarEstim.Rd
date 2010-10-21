@@ -24,7 +24,8 @@
 data(dental)
 
 model <- distance ~ 1 + Sex + (1|age) + (1|Subject)
-G<-CreateMatrix(model,dental)
+XA<-ParseFmla(model,dental)
+G<-CreateMatrix(XA)
 
 # G$namesX contains the names of columns to build contrast
 # contrast is difference between Male and Female
